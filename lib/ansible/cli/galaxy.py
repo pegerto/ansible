@@ -318,7 +318,9 @@ class GalaxyCLI(CLI):
 
         roles_done = []
         roles_left = []
-        role_name = self.args.pop(0).strip()
+
+        if len(self.args) > 0:
+            role_name = self.args.pop(0).strip()
 
         gr = GalaxyRole(self.galaxy, role_name)
         if role_file:
